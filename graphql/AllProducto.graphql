@@ -1,0 +1,39 @@
+query allProducto($tipo: String, $skip: Int = 0, $pageSize: Int = 4) {
+  productos: allProducto(
+    where: { tipo: { matches: $tipo } }
+    limit: $pageSize
+    offset: $skip
+  ) {
+    _id
+    nombre
+    articulo
+    tipo
+    descripcion
+    slug {
+      current
+    }
+    marca
+    tipoOpcional
+    images {
+      asset {
+        url
+      }
+    }
+    precio
+    disponible
+    colores
+    conjunto {
+      conjunto
+      precio
+    }
+    talles
+    mainImage {
+      asset {
+        url
+      }
+    }
+  }
+  counts: allProducto(where: { tipo: { matches: $tipo } }) {
+    nombre
+  }
+}

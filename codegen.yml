@@ -1,0 +1,11 @@
+overwrite: true
+schema: https://jx37gai2.api.sanity.io/v1/graphql/production/default
+documents: "graphql/*.graphql"
+generates:
+  types/generated-queries.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+    config:
+      withRefetchFn: true
+      withHooks: true
