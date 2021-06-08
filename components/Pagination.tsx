@@ -13,14 +13,14 @@ function Pagination({ base, total }: { base: string; total: number }) {
   return (
     <PaginationStyles>
       <Link href={`/${base}/${+page - 1}`}>
-        <a aria-disabled={page <= 1}>← Prev</a>
+        <a aria-disabled={page <= 1}>← Anteriores</a>
       </Link>
       <p>
         Pagina {page} de {pageCount}
       </p>
       <p>{total} Productos</p>
       <Link href={`/${base}/${+page + 1}`}>
-        <a aria-disabled={page >= pageCount}>Next →</a>
+        <a aria-disabled={page >= pageCount}>Siguientes →</a>
       </Link>
     </PaginationStyles>
   );

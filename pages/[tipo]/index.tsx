@@ -18,6 +18,7 @@ import {
   tipoDeProductoQuery,
 } from "../../queries/allProductos";
 import { SEO } from "../../components/SEO";
+import { LoadingSpinner } from "../../components/LoadingSpinner";
 
 const CorseteriaPage = ({
   data,
@@ -34,7 +35,7 @@ const CorseteriaPage = ({
   const tipoCapitalize = tipo?.charAt(0).toUpperCase() + tipo?.slice(1);
 
   if (router.isFallback) {
-    return <div>Loading</div>;
+    return <LoadingSpinner />;
   }
   return (
     <>
@@ -51,6 +52,7 @@ const CorseteriaPage = ({
               <Product key={product.slug.current} product={product} />
             ))}
           </ProductsStyles>
+          <Pagination base={tipo} total={count} />
         </ProductsContainerStyles>
       </ProductPageStyles>
     </>

@@ -56,27 +56,17 @@ export const NavigationStyles = styled.nav`
       &[aria-current="page"] {
         color: var(--black);
       }
-      @media (max-width: 700px) {
-        width: calc(100% - 10px);
-      }
     }
   }
 
   @media (max-width: 700px) {
-    a,
-    button {
-      font-size: 1rem;
-      padding: 0 1rem;
-    }
-  }
-  @media (max-width: 500px) {
     flex-direction: column;
     align-items: center;
-
     a,
     button {
+      padding: 0.5rem 3rem;
       /* padding: 1rem 3rem; */
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       &:not(:first-child):before {
         width: 0px;
         /* transform: translateX(50%); */

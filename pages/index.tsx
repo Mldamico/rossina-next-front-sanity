@@ -1,5 +1,6 @@
 import { groq } from "next-sanity";
 import Head from "next/head";
+import { Principal } from "../components/Principal";
 import { SEO } from "../components/SEO";
 
 import { getClient, sanityClient } from "../lib/sanity.server";
@@ -15,7 +16,7 @@ export default function Home({ data }) {
         title="Lenceria Rossina"
         description="Pagina de inicio de la Lenceria Rossina"
       />
-      <h4>Principal</h4>
+      <Principal />
     </>
   );
 }

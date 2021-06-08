@@ -2,10 +2,23 @@ import React from "react";
 import { sanityClient } from "../../lib/sanity.server";
 import { groq } from "next-sanity";
 import { SingleProduct } from "../../components/SingleProduct";
+import { SEO } from "../../components/SEO";
+import { useRouter } from "next/router";
+import { LoadingSpinner } from "../../components/LoadingSpinner";
 const SingleProductPage = ({ data }) => {
-  console.log(data);
+  const router = useRouter();
+  if (router.isFallback) {
+    return <LoadingSpinner />;
+  }
   return (
     <>
+      <SEO
+        title={`${data.nombre} - ${data.articulo} | Lenceria Rossina`}
+        description={
+          data.descripcion ||
+          `Producto ${data.nombre} - Articulo ${data.articulo}`
+        }
+      />
       <SingleProduct product={data} />
     </>
   );
@@ -46,5 +59,5 @@ export const getStaticPaths = async (context) => {
   }));
   console.log("EL PATH ES");
   console.log(paths);
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };

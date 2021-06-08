@@ -56,10 +56,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          {/* <link
-            href="https://api.tiles.mapbox.com/mapbox-gl-js/v<YOUR_MAPBOX_VERSION>/mapbox-gl.css"
-            rel="stylesheet"
-          /> */}
           <link
             href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css"
             rel="stylesheet"

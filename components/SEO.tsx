@@ -20,7 +20,6 @@ export const SEO = ({
 }: ISeo) => {
   return (
     <Head>
-      <html lang="en" />
       <title>{title}</title>
       <link rel="icon" type="img/svg+xml" href="/favicon.svg" />
       <link rel="alternate icon" href="/favicon.ico" />
